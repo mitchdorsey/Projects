@@ -1,6 +1,6 @@
 This is my first application for any coding language. It simulates a real vending machine transaction. Insert money, select item code you'd like to purchse, dispenses the item, and gives you back change.
 
-Transaction data is logged into a file to transaction history.
+Transaction data is logged into a file keeping record of item purchased, price of the item, time of transaction, and more.
 
 A sales report is also logged that keeps track of total items sold and gross profit of all item sold.
 
