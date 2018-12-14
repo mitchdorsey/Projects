@@ -1,0 +1,27 @@
+﻿@section Title {
+    Home
+}
+
+@section Stylesheet {
+    <link rel="stylesheet" href="~/Content/styles/index.css">
+}
+
+@model System.Collections.Generic.IList<Capstone.Web.Models.IndexViewModel>
+
+@foreach (var i in Model)
+{
+    @*<div class="park-info-container debug">*@
+        <p class="info-container debug">
+
+            <a href="~/Home/Detail?parkCode=@(i.ParkCode)"><img class="park-img debug" src="~/Content/img/parks/@(i.ParkCode).jpg" /></a>
+
+            <span class="park-text-container debug">
+
+                <span class="park-name">@(i.ParkName)</span>
+
+                <span class="park-summary">@(i.ParkDescription)</span>
+
+            </span>
+        </p>
+
+}

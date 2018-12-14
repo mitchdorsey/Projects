@@ -1,0 +1,60 @@
+﻿.debug {
+    /*border: solid black 1px;*/
+}
+
+/*.img-container{
+    float: left;
+    width: 40%;    
+    display: inline-block;
+}*/
+.info-container {
+    overflow: auto;
+    margin: 3em;
+    border-radius: 15px;
+    /*border: solid gray 2px;
+    background-color: lightgray;*/
+    padding: 1em 1em 1em 0em;
+}
+.park-img {
+    margin: 0px 20px 4px 0px;
+    width: 45%;
+    float: left;
+    min-width: 220px;
+    border: solid rgb(33, 33, 33) 2px;
+}
+.park-name{
+    font-size: 2em;
+    font-weight: 900;
+    color: rgb(77, 77, 77);
+    margin-top: 0.5em;
+    display: block;
+    padding-bottom: 30px;
+}
+.park-text-container {
+    margin: 30px 20px 5px 30px;
+    padding: 0px 50px 25px 20px;
+    display: block;
+    border-radius: 10px;
+    background-color: rgb(221, 168, 84);
+    border: rgb(177, 136, 71) solid 2px;
+    /*color: black;*/
+}
+span.park-summary{
+    font-size: 18px;
+}
+/*.text-container{
+    display: inline-block;
+}*/
+/*.park-name{
+    font-size: 1.5em;
+    font-weight: 700;
+}
+.park-state{
+
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}*/

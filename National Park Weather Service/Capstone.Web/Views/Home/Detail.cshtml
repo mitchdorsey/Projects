@@ -1,0 +1,119 @@
+﻿@section Title {
+    Detail
+}
+
+@section Stylesheet {
+<link rel="stylesheet" href="~/Content/styles/detail.css">
+    }
+
+@model Capstone.Web.Models.DetailViewModel
+
+@functions{ 
+
+    string GetUnit(bool isFarenheight)
+    {
+        return isFarenheight ? "°F" : "°C";
+    }
+
+}
+
+<div class="wrapper">
+
+        <!--Top Container-->
+        <section class="top-container">
+            <header class="showcase">
+                <img id="parkImg" src="~/Content/img/parks/@(Model.ParkDetails.ParkCode).jpg" />
+            </header>
+        </section>
+
+        <section id="middleCard">
+
+            <!--Boxes Section-->
+            <section class="boxes">
+                <div class="box">
+                    <h1>@(Model.ParkDetails.ParkName)</h1>
+                </div>
+            </section>
+
+            <section class="boxes">
+                <div class="box">
+                    <h4>@(Model.ParkDetails.ParkDescription)</h4>
+                </div>
+            </section>
+
+            <section class="boxes">
+                <div class="box">
+                    <h3>Entry Fee: @(Model.ParkDetails.EntryFee.ToString("C"))</h3>
+                </div>
+            </section>
+
+            <!--Boxes Section-->
+            <section class="boxes">
+                <div class="box">
+                    <ul>
+                        <li><span class="columnTitles">State:</span> @(Model.ParkDetails.State)</li>
+                        <li><span class="columnTitles">Acreage:</span> @(Model.ParkDetails.Acreage) acres</li>
+                        <li><span class="columnTitles">Elevation:</span> @(Model.ParkDetails.ElevationInFeet) ft</li>
+                    </ul>
+                </div>
+                <div class="box">
+                    <ul>
+                        <li><span class="columnTitles">Trails:</span> @(Model.ParkDetails.MilesOfTrail) mi</li>
+                        <li><span class="columnTitles">Campsites:</span> @(Model.ParkDetails.NumberOfCampsites)</li>
+                        <li><span class="columnTitles">Climate:</span> @(Model.ParkDetails.Climate)</li>
+                    </ul>
+                </div>
+                <div class="box">
+                    <ul>
+                        <li><span class="columnTitles">Founded:</span> @(Model.ParkDetails.YearFounded)</li>
+                        <li><span class="columnTitles">Annual Vistors:</span> @(Model.ParkDetails.AnnualVisitorCount)</li>
+                        <li><span class="columnTitles">Animal Species:</span> @(Model.ParkDetails.NumberOfAnimalSpecies)</li>
+                    </ul>
+                </div>
+            </section>
+
+        </section>
+
+        <section id="middleCard">
+
+            <!--Boxes Section-->
+            <section class="boxes">
+                <div class="box">
+                    <h1>Five Day Weather Forecast</h1>
+                </div>
+            </section>
+
+            <!--Boxes Section-->
+            <section class="boxesToday">
+                <div class="boxToday">
+                    <h1>Today</h1>
+                </div>
+            </section>
+
+            <!--Boxes Section-->
+            <section class="boxesXXX">
+                @foreach (var item in Model.FiveDayForecast)
+                {
+                        <div class="boxXXX">
+                            <img id="weatherImg" src="~/Content/img/weather/@(item.Forecast).png" />
+                            <h3>High @(item.High.ToString())@GetUnit(Model.TempType == "Fahrenheit")</h3>
+                            <h3>Low @(item.Low.ToString())@GetUnit(Model.TempType == "Fahrenheit")</h3>
+                            <p>@(item.Advisory)</p>
+                        </div>
+                }
+            </section>
+
+        </section>
+
+        <!--Boxes Section-->
+        <section class="boxes">
+            <div class="box">
+                <a name="bottom"></a>
+                <form method="post" action="@Url.Action("DetailTempUpdate", "Home")">
+                    <input type="radio" name="tempType" value="Fahrenheit" checked="checked"><span class="radioTemp">Fahrenheit</span>
+                    <input type="radio" name="tempType" value="Celsius"><span class="radioTemp">Celsius</span><br>
+                    <button>Convert</button>
+                </form>
+            </div>
+        </section>
+</div>

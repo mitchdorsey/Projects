@@ -1,0 +1,24 @@
+﻿@section Title {
+    Survey Results
+}
+
+@section Stylesheet {
+    <link rel="stylesheet" href="~/Content/styles/surveyResults.css">
+}
+
+@model System.Collections.Generic.IList<Capstone.Web.Models.SurveyResultsViewModel>
+
+@foreach (var i in Model)
+{
+    <div>
+        <div>
+            <a href="~/Home/Detail?parkCode=@(i.ParkCode)"><img src="~/Content/img/parks/@(i.ParkCode).jpg" /></a>
+        </div>
+        <div>
+            <ul>
+                <li>Park Name: @(i.ParkName)</li>
+                <li>Survey Count: @(i.SurveyCount.ToString())</li>
+            </ul>
+        </div>
+    </div>
+}

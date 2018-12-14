@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@RenderSection("Title", true)</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    @RenderSection("Stylesheet", false)
+    <link href='https://fonts.googleapis.com/css?family=Amiko' rel='stylesheet'>
+    <script src="@Url.Content("~/Scripts/jquery-1.5.1.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/modernizr-1.7.min.js")"></script>
+</head>
+<body>
+    <header>
+        <img class="banner" src="~/Content/img/logo.png" />
+    </header>
+    
+    <div class="topnav">
+        <a  href="~/Home/Index">Home</a>
+        <a  href="~/Home/Survey">Survey</a>
+    </div>
+    
+    <section id="main">
+        @RenderBody()
+    </section>
+    
+    <footer>
+        <p id="copyright">Lucas and Mitch, LLC. &copy; 2018. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+
+
+
